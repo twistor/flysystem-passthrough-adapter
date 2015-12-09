@@ -15,8 +15,8 @@ composer require twistor/flysystem-passthrough-adapter
 
 ## Usage
 
-This package doesn't do anything on its own. It simply provides a base class
-that simplifies the creation of adapters that wrap other adapters.
+This package doesn't do anything on its own. It provides a base class that
+simplifies the creation of adapters that wrap other adapters.
 
 To use it, subclass \Twistor\Flysystem\PassthroughAdapter and override any
 methods.
