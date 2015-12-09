@@ -151,7 +151,9 @@ class PassthroughAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testReadStream()
     {
-        $this->assertInternalType('array', $this->adapter->readStream('file.txt', new Config()));
+        $result = $this->adapter->readStream('file.txt', new Config());
+        $this->assertInternalType('array', $result);
+        fclose($result['stream']);
     }
 
     /**
@@ -185,6 +187,7 @@ class PassthroughAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $stream = fopen('data:text/plain,filecontent', 'r+b');
         $this->assertInternalType('array', $this->adapter->updateStream('file.txt', $stream, new Config()));
+        fclose($stream);
     }
 
 
@@ -203,5 +206,6 @@ class PassthroughAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $stream = fopen('data:text/plain,filecontent', 'r+b');
         $this->assertInternalType('array', $this->adapter->writeStream('file.txt', $stream, new Config()));
+        fclose($stream);
     }
 }
