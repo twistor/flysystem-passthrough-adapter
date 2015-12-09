@@ -1,0 +1,37 @@
+{
+    "name": "twistor/flysystem-passthrough-adapter",
+    "description": "A simple adapter that wraps another adapter.",
+    "keywords": [
+        "league"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/twistor/flysystem-passthrough-adapter",
+    "authors": [
+        {
+            "name": "Chris Leppanen",
+            "email": "chris.leppanen@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "league/flysystem": "~1.0"
+    },
+    "require-dev": {
+        "league/flysystem-memory": "^1.0",
+        "phpunit/phpunit": "~4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Twistor\\Flysystem\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
