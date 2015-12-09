@@ -18,10 +18,22 @@ This package doesn't do anything on its own. It simply provides a base class
 that simplifies the creation of adapters that wrap other adapters.
 
 ```php
+<?php
+
+use League\Flysystem\AdapterInterface;
 use Twistor\Flysystem\PassthroughAdapter;
 
 class UppercaseAdapter extends PassthroughAdapter
 {
+    /**
+     * Constructs an UppercaseAdapter.
+     *
+     * @param AdapterInterface $adapter
+     */
+    public function __construct(AdapterInterface $adapter)
+    {
+        parent::__construct($adapter);
+    }
 
     /**
      * @inheritdoc
